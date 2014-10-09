@@ -1,0 +1,12 @@
+Vars are set in group_vars/ssl because of the sheer number of things that depend on this role.
+
+Here's a sample:
+---
+ssl:
+  dest:
+    cert: /etc/pki/tls/certs
+    key: /etc/pki/tls/private
+  examplecom:
+    chained: my-chained-cert.crt
+    cert: my-cert.crt
+    key: my-key.key

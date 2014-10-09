@@ -1,0 +1,25 @@
+---
+sshd:
+  # semanage port -a -t ssh_port_t -p tcp $PORT
+  port: 22
+  permit_root: 'without-password'
+  password_auth: 'no'
+  challenge_response: 'no'
+  x11_fwd: 'no'
+  accept_env:
+    - LANG
+    - LANGUAGE
+    - LC_ADDRESS
+    - LC_ALL
+    - LC_COLLATE
+    - LC_CTYPE
+    - LC_IDENTIFICATION
+    - LC_MEASUREMEN
+    - LC_MESSAGES
+    - LC_MONETARY
+    - LC_NAME
+    - LC_NUMERIC
+    - LC_PAPER
+    - LC_TELEPHONE
+    - LC_TIME
+    - XMODIFIERS

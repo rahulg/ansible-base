@@ -1,0 +1,5 @@
+---
+packages:
+  - "@development tools"
+  - python3
+  - tree

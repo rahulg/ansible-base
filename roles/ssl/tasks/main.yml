@@ -1,0 +1,24 @@
+---
+- name: create tls group
+  group:
+    name=tls
+    state=present
+    system=yes
+
+- name: copy ssl certs
+  copy:
+    src={{ item }}
+    dest={{ ssl.dest.cert }}/
+    owner=root
+    group=tls
+    mode=0644
+  with_fileglob: certs/*
+
+- name: copy ssl keys
+  copy:
+    src={{ item }}
+    dest={{ ssl.dest.key }}/
+    owner=root
+    group=tls
+    mode=0640
+  with_fileglob: keys/*

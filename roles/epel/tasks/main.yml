@@ -1,0 +1,11 @@
+---
+- name: install epel
+  yum:
+    name={{ epel_release_rpm }}
+    state=present
+
+- name: enable epel
+  ini_file: dest=/etc/yum.repos.d/epel.repo
+            section=epel
+            option=enabled
+            value=1

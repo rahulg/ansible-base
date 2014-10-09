@@ -1,0 +1,7 @@
+---
+packages:
+  - bash-completion
+  - htop
+  - python
+  - tmux
+  - vim

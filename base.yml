@@ -1,0 +1,17 @@
+---
+- hosts: el7
+  roles:
+    - epel
+
+- hosts: all
+  roles:
+    - ssh
+    - base
+
+- hosts: development
+  roles:
+    - development
+
+- hosts: ssl
+  roles:
+    - ssl

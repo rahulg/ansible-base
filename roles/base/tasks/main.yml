@@ -1,0 +1,16 @@
+---
+- name: install packages
+  yum:
+    name="{{ item }}"
+    state=latest
+  with_items: packages
+
+- name: set authorised keys
+  authorized_key:
+    user=root
+    key="{{ lookup('file', item) }}"
+    state=present
+  with_fileglob: '*.pub'
+
+- name: set locale
+  shell: localectl set-locale 'LANG=en_GB.utf8'
